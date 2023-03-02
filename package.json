@@ -1,0 +1,14 @@
+{
+  "name": "NodeJs-TechnicalTest",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "NestorSanchez <nesaenz.69@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "jest": "^29.4.3"
+  },
+  "scripts": {
+    "test":"jest",
+    "start": "node src/index.js"
+  }
+}
