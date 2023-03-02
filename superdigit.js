@@ -1,19 +1,17 @@
-const sumRecursive = (arrayNumbers, iter) => {
+const sumRecursive = (arrayNumbers) => {
+  arrayNumbers = arrayNumbers.map((n) => Number.parseInt(n));
+
+  if (arrayNumbers.length == 1) {
+    return arrayNumbers[0];
+  }
+
   let totalAmount = arrayNumbers.reduce(
     (sum, currentValue) => sum + currentValue
   );
+  console.log(arrayNumbers, totalAmount);
+  let sumNums = totalAmount.toString().split("");
 
-  let sumNums = totalAmount
-    .split("")
-    .reduce((prev, curv) => Number(prev) + Number(curv));
-
-  let newArr = sumNums.toString().split("");
-
-  if (iter === 0) {
-    return console.log(Number(sumNums));
-  } else {
-    return sumRecursive(newArr, iter - 1);
-  }
+  return sumRecursive(sumNums);
 };
 
 const super_digit = (n, k) => {
@@ -23,7 +21,8 @@ const super_digit = (n, k) => {
 
   for (let i = 0; i < k; i++) workArray = [...workArray, ...splitNums];
 
-  sumRecursive(workArray, k);
+  result = sumRecursive(workArray);
+  console.log(result);
 };
 
 super_digit(148, 3);
